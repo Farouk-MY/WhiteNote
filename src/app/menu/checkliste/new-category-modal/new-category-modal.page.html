@@ -1,0 +1,16 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Add New <span>Category</span></ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="close" slot="end" class="ion-padding" (click)="closeModal()">Close</ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">New Category</ion-label>
+    <ion-input [(ngModel)]="newCategory"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="closeModal()">Add Category</ion-button>
+</ion-content>

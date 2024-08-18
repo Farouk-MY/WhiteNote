@@ -1,0 +1,50 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="m-bar">
+    <ion-title>To Do <span>Liste</span></ion-title>
+    <ion-buttons slot="start" >
+      <ion-menu-button menu="main-menu">
+        <ion-icon class="icoo" name="grid-sharp"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="card">
+  <div class="image-container" *ngIf="todoList.length === 0">
+    <img [src]="imagePath">
+  </div>
+  <ion-card *ngFor="let item of todoList; let i = index" class="custom-card ion-margin">
+    <ion-card-header>
+      <ion-card-subtitle [style.color]="getItemPriorityColor(item.value.itemPriority)">
+        {{item.value.itemCategory}}
+      </ion-card-subtitle>
+      <ion-item lines="none">
+        <ion-icon [name]="getItemPriorityIcon(item.value.itemPriority)"slot="start"></ion-icon>
+        <ion-label>{{item.value.itemName}}</ion-label>
+      </ion-item>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Due {{item.value.itemDueDate | date:'fullDate'}}</p>
+    </ion-card-content>
+
+    <ion-row class="ion-justify-content-end">
+      <ion-item button (click)="update(item)" class="ion-margin-end">
+        <ion-icon name="create-outline"></ion-icon>
+        <p>Update</p>
+      </ion-item>
+
+      <ion-item button (click)="delete(item.key)" class="ion-margin-end">
+        <ion-icon name="trash-outline"></ion-icon>
+        <p>Delete</p>
+      </ion-item>
+    </ion-row>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addNewItem()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>

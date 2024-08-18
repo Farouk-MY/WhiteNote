@@ -1,0 +1,92 @@
+.h-head {
+  ion-toolbar {
+    --background: #394045;
+    .icoo {
+      color: white;
+    }
+  }
+
+  ion-searchbar {
+    --background: none;
+    --border: none;
+    --border-radius: 20px;
+    color: white;
+  }
+}
+
+.h-card {
+  padding: 4px 10px 20px 10px;
+  background: #394045;
+  border-radius: 0px 0px 28px 28px;
+}
+
+.scroll-box {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  width: auto;
+  background: transparent;
+}
+
+.scroll-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove box shadow */
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.profile-name {
+  text-align: center;
+  margin-top: 5px; /* Add some margin to separate the name from the picture */
+}
+
+ion-content {
+  ion-list {
+    padding: 0;
+    margin-top: 25px;
+    
+
+    ion-item {
+      color: rgb(0, 0, 0);
+      border: none;
+      margin-top: 10px;
+      ion-avatar {
+        width: 55px;
+        height: 55px;
+        margin-right: 15px; // Adjust as needed
+        border: 3px solid #394045;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      ion-label {
+        font-size: 25px;
+        font-weight: 400;
+      }
+    }
+  }
+}
